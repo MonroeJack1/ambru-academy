@@ -1,5 +1,5 @@
-import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
+import { asset } from "@/lib/base-path"
 
 const SKOOL_LINK = "https://skool.com/ambru-academy"
 
@@ -62,12 +62,11 @@ export function Gallery() {
             >
               {/* Image */}
               <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src={src}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={asset(src)}
                   alt={`${title} — futuristic AI academy interface preview`}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 {/* Overlay */}
                 <div

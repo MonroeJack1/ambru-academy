@@ -1,9 +1,9 @@
 "use client"
 
-import Image from "next/image"
 import { ArrowRight, ChevronDown } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { asset } from "@/lib/base-path"
 
 const SKOOL_LINK = "https://skool.com/ambru-academy"
 
@@ -99,13 +99,13 @@ export function Hero() {
                 aria-hidden="true"
               />
               <div className="relative rounded-2xl overflow-hidden border border-surface-border shadow-2xl shadow-black/50">
-                <Image
-                  src="/images/hero-dashboard.png"
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={asset("/images/hero-dashboard.png")}
                   alt="Ambru Academy AI learning dashboard — futuristic interface showing learning paths, prompt modules, and automation flows"
                   width={700}
                   height={500}
                   className="w-full object-cover"
-                  priority
                 />
                 {/* Overlay shimmer */}
                 <div
